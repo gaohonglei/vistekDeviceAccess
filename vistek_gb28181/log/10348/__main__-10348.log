@@ -1,0 +1,4 @@
+[2017-01-03 17:27:24,509] [INFO] [__main__-10348.log] [gb28181_wrap.py:createLoginXML:129] [createXML-XML:<?xml version='1.0' encoding='UTF-8'?>
+<UasPara><ServerId>34010000002000000001</ServerId><ServerDomain>3401000000</ServerDomain><ServerIp>172.16.10.90</ServerIp><ServerPort>5060</ServerPort><UserName>34013100002000000002</UserName><PassWord>12345678</PassWord><LocalId>34013100002000000002</LocalId><RegValidity>3600</RegValidity><HeartBeatInter>60</HeartBeatInter><HeartBeatCount>3</HeartBeatCount></UasPara>]
+[2017-01-03 17:27:24,516] [INFO] [__main__-10348.log] [gb28181_wrap.py:gb_uac_login_server:96] [gb_uac_login_server success. code:0,IP:172.16.10.90, DeviceID:c492a972-85ee-4730-bc7b-ce7929203a6a,connID:0]
+[2017-01-03 17:27:24,516] [INFO] [__main__-10348.log] [gb28181_wrap.py:new_28181instance:416] [register deviceID:c492a972-85ee-4730-bc7b-ce7929203a6a IP:172.16.10.90 success instance count:1]

@@ -1,0 +1,75 @@
+#pragma once
+#include <Ice/Identity.ice>
+#include <Ice/Instrumentation.ice>
+
+module Vistek
+{
+	module Device
+	{
+		class CpuInfo
+		{
+			float cpuUseRate;//0-100
+			optional(0) int cpuCount = 0;
+			optional(1) int physicCpuCount = 0;
+		};
+		class MemInfo
+		{
+			float memSize;
+			float useMem;
+			float aviableMemSize;
+			float memUseRate;//0-100
+		};
+		class DeviceRegisterInfo
+		{
+			int registerSuccessCount;
+			int registerFailCount;
+			string registerSuccessDeviceList;//DeviceID
+			string registerFailDeviceList;//DeviceID
+		};
+		class BasePhyServiceInfo
+		{
+			string serviceID;
+			CpuInfo cpuinfovalue;
+			MemInfo meminfovalue;
+			DeviceRegisterInfo registerinfovalue;
+		};
+		sequence<BasePhyServiceInfo> BasePhyServiceInfoList;
+		
+		class PushStatusInfo
+		{
+			string serviceID;
+			string deviceID;
+			string ip;
+			int channel;
+			bool status;
+			string pushTime;
+			optional(0) string errMsg;
+		};
+		
+		class PushStreamUriInfo
+		{
+			string serviceID;
+			int pushCount;
+			string pushContent;
+			string pushTime;
+		};
+		enum ServiceStatusType{ vStatusOK=0, vStatusError=1};
+		class ServiceStatus
+		{
+			ServiceStatusType status;
+			optional(0) string error_msg;
+		};
+				
+		interface BaseWatchService
+		{
+			idempotent string GetServiceRunningInfo();//device running info with xml string.
+			idempotent ServiceStatus isDeviceServiceOk();
+		};
+
+		interface DeviceWatchService extends BaseWatchService
+		{
+			idempotent BasePhyServiceInfoList GetPhysicInfo();
+		};
+		
+	};
+};
