@@ -162,11 +162,11 @@ updated files.'''
             pass
 
         def getChecksum(self, current=None):
-            '''Return the master checksum for all partitions. If this checksum is the same
+            '''Return the main checksum for all partitions. If this checksum is the same
 as for a previous run, the entire file set is up-to-date.
 
 Returns:
-    The master checksum for the file set.'''
+    The main checksum for the file set.'''
             pass
 
         def getFileCompressed_async(self, _cb, path, pos, num, current=None):
@@ -339,27 +339,27 @@ updated files.'''
         def end_getChecksumSeq(self, _r):
             return _M_IcePatch2.FileServer._op_getChecksumSeq.end(self, _r)
 
-        '''Return the master checksum for all partitions. If this checksum is the same
+        '''Return the main checksum for all partitions. If this checksum is the same
 as for a previous run, the entire file set is up-to-date.
 
 Returns:
-    The master checksum for the file set.'''
+    The main checksum for the file set.'''
         def getChecksum(self, _ctx=None):
             return _M_IcePatch2.FileServer._op_getChecksum.invoke(self, ((), _ctx))
 
-        '''Return the master checksum for all partitions. If this checksum is the same
+        '''Return the main checksum for all partitions. If this checksum is the same
 as for a previous run, the entire file set is up-to-date.
 
 Returns:
-    The master checksum for the file set.'''
+    The main checksum for the file set.'''
         def begin_getChecksum(self, _response=None, _ex=None, _sent=None, _ctx=None):
             return _M_IcePatch2.FileServer._op_getChecksum.begin(self, ((), _response, _ex, _sent, _ctx))
 
-        '''Return the master checksum for all partitions. If this checksum is the same
+        '''Return the main checksum for all partitions. If this checksum is the same
 as for a previous run, the entire file set is up-to-date.
 
 Returns:
-    The master checksum for the file set.'''
+    The main checksum for the file set.'''
         def end_getChecksum(self, _r):
             return _M_IcePatch2.FileServer._op_getChecksum.end(self, _r)
 
